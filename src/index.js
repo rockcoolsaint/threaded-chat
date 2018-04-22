@@ -4,7 +4,10 @@ import ReactDOM from "react-dom";
 // [1] Comment out this line:
 // import App from "./complete/App-17";
 // [2] Un-comment this line:
-import App from "./App";
+// import App from "./App";
+
+//customization code
+import App from "./App-custom";
 
 import "./index.css";
 import "./semantic-dist/semantic.min.css";
