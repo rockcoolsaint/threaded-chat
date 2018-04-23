@@ -279,7 +279,11 @@ class Thread extends React.Component {
       <div
         className='comment'
         key={index}
-        onClick={() => this.handleClick(index)}
+        onClick={() => {
+          if(activeTab === t.id) {
+            this.handleClick(index)
+          };
+        }}
       >
         <div className='text'>
           <strong>{t.title}</strong>&nbsp;&nbsp;{t.message.text}
