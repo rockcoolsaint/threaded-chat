@@ -272,6 +272,14 @@ class Thread extends React.Component {
     };
   };
 
+  youId = (id, activeTab, title) => {
+    if (id === activeTab) {
+      return 'You';
+    } else {
+      return title;
+    }
+  }
+
   render() {
     const activeTab= this.props.tab;
     //const chatter = this.props.threadIds;
@@ -286,7 +294,7 @@ class Thread extends React.Component {
         }}
       >
         <div className='text'>
-          <strong>{t.title}</strong>&nbsp;&nbsp;{t.message.text}
+          <strong>{this.youId(t.id, activeTab, t.title)}</strong>&nbsp;&nbsp;{t.message.text}
           <span className='metadata'>@{t.message.timestamp}</span>
         </div>
       </div>
