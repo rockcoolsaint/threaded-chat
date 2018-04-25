@@ -1,5 +1,6 @@
 import uuid from 'uuid';
 import { createStore } from 'redux';
+import moment from 'moment';
 
 /*const reducer = combineReducers({
   activeThreadId: activeThreadIdReducer,
@@ -104,7 +105,7 @@ function messageReducer(state = [], action) {
     case 'ADD_MESSAGE': {
       const newMessage = {
         text: action.text,
-        timestamp: Date.now(),
+        timestamp: moment().format('LT'),
         id: uuid.v4(),
       };
       //return state.concat(newMessage);
@@ -140,7 +141,7 @@ const initialState = {
       title: 'Buzz Aldrin',
       message: {
         text: 'Twelve minutes to ignition.',
-        timestamp: Date.now(),
+        timestamp: moment().format('LT'),
         id: uuid.v4(),
       },
     },
